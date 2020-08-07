@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- TOP -->
+    <RelativeLayout
+        android:id="@+id/top_temp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <include  layout="@layout/custom_toolbar" />
+
+    </RelativeLayout>
+
+
+
+    <!-- Center fragment section -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top_temp"
+        android:layout_above="@+id/home_bottom_nevigation"
+        >
+
+        <fragment
+            android:id="@+id/fragment1"
+            android:name="com.farmerssales.farmerssales.FeaturedFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/fragment_featured" />
+
+        <fragment
+            android:id="@+id/fragment2"
+            android:name="com.farmerssales.farmerssales.CategoriesFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/fragment_categories" />
+    </RelativeLayout>
+    <!-- Bottom -->
+    <RelativeLayout
+        android:id="@+id/home_bottom_nevigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true">
+
+        <include layout="@layout/my_navigation"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

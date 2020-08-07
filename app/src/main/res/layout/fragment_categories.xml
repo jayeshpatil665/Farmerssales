@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CategoriesFragment">
+
+
+    <ScrollView
+        android:layout_below="@+id/top_temp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_navigation1"
+        >
+
+        <LinearLayout
+            android:id="@+id/rl1"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+
+
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="#eee9e9"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                >
+
+                <Button
+                    android:id="@+id/btn1"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:drawableLeft="@drawable/crop3"
+                    android:text="\t\tGrains"
+                    android:background="#ffffff"
+                    android:textAllCaps="false"
+                    android:gravity="center_vertical"
+                    />
+
+                <Button
+                    android:id="@+id/btn2"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/btn1"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/crop3"
+                    android:gravity="center_vertical"
+                    android:background="#ffffff"
+                    android:text="\t\tVegetables and spices"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn3"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#ffffff"
+                    android:drawableLeft="@drawable/crop3"
+                    android:text="\t\tTractors and Vehicles"
+                    android:textAllCaps="false"
+                    android:layout_below="@id/btn2"
+                    android:gravity="center_vertical" />
+
+                <Button
+                    android:id="@+id/btn4"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/btn3"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/crop3"
+                    android:gravity="center_vertical"
+                    android:background="#ffffff"
+                    android:text="\t\tFarm and Storage"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn5"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/btn4"
+                    android:gravity="center_vertical"
+                    android:background="#ffffff"
+                    android:drawableLeft="@drawable/crop3"
+                    android:text="\t\tFruits and flowers"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn6"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/crop3"
+                    android:text="\t\tAnimals and Animals Food"
+                    android:background="#ffffff"
+                    android:layout_below="@id/btn5"
+                    android:gravity="center_vertical"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn7"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/crop3"
+                    android:text="\t\tMotors, Pipes and Pumps"
+                    android:background="#ffffff"
+                    android:textAllCaps="false"
+                    android:layout_below="@id/btn6"
+                    android:gravity="center_vertical" />
+
+                <Button
+                    android:id="@+id/btn8"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/crop3"
+                    android:text="\tFarm Machinery and Equipments"
+                    android:layout_below="@id/btn7"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn9"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp"
+                    android:textAllCaps="false"
+                    android:layout_below="@id/btn8"
+                    android:gravity="center_vertical"
+                    android:background="#ffffff"
+                    android:drawableLeft="@drawable/crop3"
+                    android:text="\tMilk, Food and Dairy Products" />
+
+                <Button
+                    android:id="@+id/btn10"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="10dp"
+                    android:textAllCaps="false"
+                    android:layout_below="@id/btn9"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical"
+                    android:drawableLeft="@drawable/crop3"
+                    android:text="\tSeeds, Fertilizers and Pesticide"
+                    />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+</LinearLayout>
