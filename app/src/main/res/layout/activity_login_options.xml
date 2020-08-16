@@ -73,7 +73,7 @@
             >
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tv_phone"
+                android:id="@+id/tv_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -94,6 +94,7 @@
 
     </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/buttons"
             android:layout_below="@+id/input_fields"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -142,6 +143,7 @@
                 android:layout_marginTop="10dp"
                 android:background="#000000"
                 android:text="Send OTP"
+                android:onClick="sendOtpNow"
                 android:textColor="#ffffff"
                 android:textSize="20dp"
                 android:textAllCaps="false"/>
@@ -158,4 +160,25 @@
                 android:background="#000000"/>
         </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_below="@+id/buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            >
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/anim1"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:lottie_loop="true"
+                app:lottie_autoPlay="true"
+                app:lottie_rawRes="@raw/anim_nature_loader"
+                android:visibility="invisible"
+                >
+            </com.airbnb.lottie.LottieAnimationView>
+
+        </RelativeLayout>
 </RelativeLayout>
