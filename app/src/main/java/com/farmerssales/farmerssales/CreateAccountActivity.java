@@ -177,15 +177,11 @@ public class CreateAccountActivity extends AppCompatActivity {
     }
 
     public void backprofile(View view) {
-        Intent backIntent = new Intent(CreateAccountActivity.this,ProfileActivity.class);
-        startActivity(backIntent);
-        finish();
+        onBackPressed();
     }
 
     @Override
     public void onBackPressed() {
-        Intent backIntent = new Intent(CreateAccountActivity.this,ProfileActivity.class);
-        startActivity(backIntent);
-        finish();
+        super.onBackPressed();
     }
 }
