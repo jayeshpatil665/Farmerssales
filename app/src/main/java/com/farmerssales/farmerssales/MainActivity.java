@@ -52,6 +52,16 @@ public class MainActivity extends AppCompatActivity {
         //TOP Tab
         top_tab = (TabLayout) findViewById(R.id.tab);
 
+        Paper.init(this);
+        final String UserPhoneKey = Paper.book().read(UserDetails.UserfNameKey);
+        if (UserPhoneKey !="") {
+            top_u_name.setText(UserPhoneKey);
+        }
+        String UserSkipKey = Paper.book().read(UserDetails.UserSkipKey);
+        if (UserSkipKey.equals("skiped")) {
+            top_u_name.setText("Hello User");
+        }
+
         top_tab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -108,9 +118,19 @@ public class MainActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_profile:
-                        startActivity(new Intent(getApplicationContext() ,ProfileActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
+                        String UserSkipKey = Paper.book().read(UserDetails.UserSkipKey);
+                        if (UserSkipKey.equals("NotSkiped")) {
+                            startActivity(new Intent(getApplicationContext() ,ProfileLogedInActivity.class));
+                            overridePendingTransition(0,0);
+                            return true;
+                        }
+                        else
+                        {
+                            startActivity(new Intent(getApplicationContext() ,ProfileActivity.class));
+                            overridePendingTransition(0,0);
+                            return true;
+                        }
+
                 }
 
                 return false;
@@ -126,12 +146,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        Paper.init(this);
-        String UserPhoneKey = Paper.book().read(UserDetails.UserfNameKey);
-        if (UserPhoneKey !="") {
-            top_u_name.setText(UserPhoneKey);
-        }
     }
 
     @Override

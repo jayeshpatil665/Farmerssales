@@ -175,7 +175,7 @@
                 android:layout_height="wrap_content"
                 app:lottie_loop="true"
                 app:lottie_autoPlay="true"
-                app:lottie_rawRes="@raw/anim_nature_loader"
+                app:lottie_rawRes="@raw/anim_loader"
                 android:visibility="invisible"
                 >
             </com.airbnb.lottie.LottieAnimationView>

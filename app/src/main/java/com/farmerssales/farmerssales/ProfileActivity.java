@@ -64,4 +64,9 @@ public class ProfileActivity extends AppCompatActivity {
         Intent createAccountIntent = new Intent(ProfileActivity.this,CreateAccountActivity.class);
         startActivity(createAccountIntent);
     }
+
+    public void logInPage(View view) {
+        Intent logInIntent = new Intent(ProfileActivity.this,LoginOptionsActivity.class);
+        startActivity(logInIntent);
+    }
 }

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileLogedInActivity">
+
+    <ScrollView
+        android:layout_above="@+id/login_profile_bottom"
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/im_profile_after_signin"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/splash_back">
+            </ImageView>
+
+            <Button
+                android:id="@+id/profile_after_signin_inbox"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="left"
+                android:layout_below="@id/im_profile_after_signin"
+                android:textAllCaps="false"
+                android:paddingTop="15dp"
+                style="?android:borderlessButtonStyle"
+                android:textSize="12dp"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff"
+                android:textColor="#374e63"
+                android:text="\t\tInbox\n\n\t\tSee what's new and get in on our latest promos."
+                android:drawableRight="@drawable/ic_baseline_chevron_253746_right_24"/>
+
+            <Button
+                android:id="@+id/profile_after_signin_profile"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="left"
+                android:layout_below="@id/profile_after_signin_inbox"
+                android:textAllCaps="false"
+                android:paddingTop="15dp"
+                android:textSize="12dp"
+                style="?android:borderlessButtonStyle"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff"
+                android:textColor="#374e63"
+                android:text="\t\tProfile\n\n\t\tChange your password and personalize your profile."
+                android:drawableRight="@drawable/ic_baseline_chevron_253746_right_24"/>
+
+            <Button
+                android:id="@+id/profile_after_signin_app_setting"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="left"
+                android:layout_below="@id/profile_after_signin_profile"
+                android:textAllCaps="false"
+                android:paddingTop="15dp"
+                android:textSize="12dp"
+                style="?android:borderlessButtonStyle"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff"
+                android:textColor="#374e63"
+                android:text="\t\tApp Setting\n\n\t\tUpdate notification and location services so you\n\t\tnever miss out."
+                android:drawableRight="@drawable/ic_baseline_chevron_253746_right_24"/>
+            <Button
+                android:id="@+id/profile_after_signin_help"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_below="@id/profile_after_signin_app_setting"
+                android:layout_marginTop="10dp"
+                android:gravity="left"
+                android:textSize="12dp"
+                style="?android:borderlessButtonStyle"
+                android:textColor="#374e63"
+                android:textAllCaps="false"
+                android:paddingTop="15dp"
+                android:background="#ffffff"
+                android:text="\t\tHelp\n\n\t\tNeed answers? we're here for you."
+                android:drawableRight="@drawable/ic_baseline_chevron_253746_right_24"/>
+
+            <Button
+                android:id="@+id/profile_after_signin_signout"
+                android:layout_width="150dp"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profile_after_signin_help"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="-578dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="40dp"
+                android:background="#253746"
+                android:text="Sign out"
+                android:onClick="toLogout"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="18dp" />
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/login_profile_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true">
+
+        <include layout="@layout/my_navigation"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

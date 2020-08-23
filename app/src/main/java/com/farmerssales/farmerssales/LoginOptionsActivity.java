@@ -200,6 +200,8 @@ public class LoginOptionsActivity extends AppCompatActivity {
 //Save user Data Locally--------------------------------------------------------
 private void saveUserDataLocaly(Users uData1) {
 
+    Paper.book().write(UserDetails.UserSkipKey,"NotSkiped");
+
     Paper.book().write(UserDetails.UserPhoneKey,uData1.getPhone_number());
     Paper.book().write(UserDetails.UserEmailKey,uData1.getEmail());
     Paper.book().write(UserDetails.UserPasswordKey,uData1.getPassword());

@@ -6,22 +6,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
-import com.farmerssales.farmerssales.UserDetails.UserDetails;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import io.paperdb.Paper;
 
-public class PostAddActivity extends AppCompatActivity {
+public class ProfileLogedInActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_post_add);
+        setContentView(R.layout.activity_profile_loged_in);
 
-        //Bottom Bar
+
+
         BottomNavigationView bottom_navigation = findViewById(R.id.bottom_navigation);
-        bottom_navigation.setSelectedItemId(R.id.navigation_post_ad);
+        bottom_navigation.setSelectedItemId(R.id.navigation_profile);
 
         bottom_navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -39,34 +40,31 @@ public class PostAddActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_post_ad:
+                        startActivity(new Intent(getApplicationContext() ,PostAddActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.Navigation_Message:
                         startActivity(new Intent(getApplicationContext() ,MessageActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_profile:
-                        String UserSkipKey = Paper.book().read(UserDetails.UserSkipKey);
-                        if (UserSkipKey.equals("NotSkiped")) {
-                            startActivity(new Intent(getApplicationContext() ,ProfileLogedInActivity.class));
-                            overridePendingTransition(0,0);
-                            return true;
-                        }
-                        else
-                        {
-                            startActivity(new Intent(getApplicationContext() ,ProfileActivity.class));
-                            overridePendingTransition(0,0);
-                            return true;
-                        }
+                        return true;
                 }
 
                 return false;
             }
         });
-
     }
 
     @Override
     public void onBackPressed() {
         //
+    }
+
+    public void toLogout(View view) {
+        Paper.book().destroy();
+        Intent intent = new Intent(ProfileLogedInActivity.this,SplashScreen.class);
+        startActivity(intent);
+        finish();
     }
 }

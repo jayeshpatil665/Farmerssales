@@ -8,7 +8,10 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.farmerssales.farmerssales.UserDetails.UserDetails;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import io.paperdb.Paper;
 
 public class MySavesActivity extends AppCompatActivity {
 
@@ -43,9 +46,18 @@ public class MySavesActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_profile:
-                        startActivity(new Intent(getApplicationContext() ,ProfileActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
+                        String UserSkipKey = Paper.book().read(UserDetails.UserSkipKey);
+                        if (UserSkipKey.equals("NotSkiped")) {
+                            startActivity(new Intent(getApplicationContext() ,ProfileLogedInActivity.class));
+                            overridePendingTransition(0,0);
+                            return true;
+                        }
+                        else
+                        {
+                            startActivity(new Intent(getApplicationContext() ,ProfileActivity.class));
+                            overridePendingTransition(0,0);
+                            return true;
+                        }
                 }
 
                 return false;
