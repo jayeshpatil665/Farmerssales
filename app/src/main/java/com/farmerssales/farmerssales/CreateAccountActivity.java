@@ -141,10 +141,10 @@ public class CreateAccountActivity extends AppCompatActivity {
                 data[3] = email_reg;
                 data[4] = pass_reg;
 
-                data[5] = "Null";
-                data[6] = "Null";
-                data[7] = "Null";
-                data[8] = "Null";
+                data[5] = "address";
+                data[6] = "district";
+                data[7] = "state";
+                data[8] = "pin";
 
                 data[9] = "0";
                 data[10] = "0";
@@ -158,7 +158,7 @@ public class CreateAccountActivity extends AppCompatActivity {
                         {
                             progress.setVisibility(View.INVISIBLE);
                             Toast.makeText(CreateAccountActivity.this, "Registration Success", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(CreateAccountActivity.this,ProfileActivity.class);
+                            Intent intent = new Intent(CreateAccountActivity.this,LoginOptionsActivity.class);
                             startActivity(intent);
                             finish();
                         }

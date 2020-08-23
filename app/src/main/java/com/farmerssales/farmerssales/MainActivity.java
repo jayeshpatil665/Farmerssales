@@ -6,13 +6,22 @@ import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.farmerssales.farmerssales.UserDetails.UserDetails;
+import com.farmerssales.farmerssales.UserDetails.Users;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
+import com.google.gson.Gson;
+import com.vishnusivadas.advanced_httpurlconnection.PutData;
+
+import io.paperdb.Paper;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,10 +29,13 @@ public class MainActivity extends AppCompatActivity {
 
     Button btn1;
 
+    TextView top_u_name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        top_u_name = findViewById(R.id.top_u_name);
 
         //FragmentManagerReference
         final FragmentManager manager = this.getSupportFragmentManager();
@@ -114,6 +126,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        Paper.init(this);
+        String UserPhoneKey = Paper.book().read(UserDetails.UserfNameKey);
+        if (UserPhoneKey !="") {
+            top_u_name.setText(UserPhoneKey);
+        }
     }
 
     @Override
