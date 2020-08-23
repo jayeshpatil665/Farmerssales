@@ -133,7 +133,6 @@ public class LoginOptionsActivity extends AppCompatActivity {
                         if (result.equals("Authorised"))
                         {
                             getUserData(id);
-                            Toast.makeText(LoginOptionsActivity.this, ""+result+"-> Loading Data", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginOptionsActivity.this,MainActivity.class);
                             anim1.setVisibility(View.INVISIBLE);
                             startActivity(intent);
@@ -170,9 +169,6 @@ public class LoginOptionsActivity extends AppCompatActivity {
                 if (putData.startPut()) {
                     if (putData.onComplete()) {
                         String result = putData.getResult();
-                        //Toast.makeText(RetriveDataActivity.this, ""+result, Toast.LENGTH_SHORT).show();
-
-                        //End ProgressBar (Set visibility to GONE)
                         if (!result.equals("Error: Database connection"))
                         {
                             Users uData1 = gson.fromJson(DecodeString(result),Users.class);

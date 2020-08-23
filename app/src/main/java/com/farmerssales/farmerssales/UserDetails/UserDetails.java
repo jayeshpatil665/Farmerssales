@@ -8,4 +8,5 @@ public class UserDetails {
     public static final String UserfNameKey = "UserfName";
     public static final String UserlNameKey = "UserlName";
     public static final String UserSkipKey = "skiped";
+    public static final String UserExistKey = "notExist";
 }

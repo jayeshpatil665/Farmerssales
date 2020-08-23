@@ -91,20 +91,19 @@
 
             <Button
                 android:id="@+id/profile_after_signin_signout"
-                android:layout_width="150dp"
-                android:layout_centerHorizontal="true"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="Sign out"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:onClick="toLogout"
                 android:layout_below="@id/profile_after_signin_help"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="-578dp"
+                android:layout_marginTop="45dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="40dp"
                 android:background="#253746"
-                android:text="Sign out"
-                android:onClick="toLogout"
-                android:textAllCaps="false"
-                android:textColor="#ffffff"
-                android:textSize="18dp" />
+                android:textColor="#ffffff" />
         </RelativeLayout>
 
     </ScrollView>
