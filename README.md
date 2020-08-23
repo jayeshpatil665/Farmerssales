@@ -1,7 +1,5 @@
 # Farmerssales
 <br>
-![](app/src/main/res/drawable/app_logo.png)
-<br>
 Android Project ... in Progress <br>
 
 APK V 0.1 : <br> https://drive.google.com/file/d/1SjUN8nEH2uGCS4GlPi0TJ2esEEsDQmVV/view?usp=sharing
