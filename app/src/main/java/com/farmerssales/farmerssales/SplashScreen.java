@@ -2,7 +2,9 @@ package com.farmerssales.farmerssales;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
@@ -24,12 +26,19 @@ public class SplashScreen extends AppCompatActivity {
 
         Paper.init(this);
 
-        String UserPhoneKey = Paper.book().read(UserDetails.UserPhoneKey);
-        if(UserPhoneKey !="")
+        if (isNetworkConnected())
         {
-            if (!TextUtils.isEmpty(UserPhoneKey))
+            String UserPhoneKey = Paper.book().read(UserDetails.UserPhoneKey);
+            if(UserPhoneKey !="")
             {
-                this.allowAccess(UserPhoneKey);
+                if (!TextUtils.isEmpty(UserPhoneKey))
+                {
+                    this.allowAccess(UserPhoneKey);
+                }
+                else
+                {
+                    newUser();
+                }
             }
             else
             {
@@ -38,8 +47,16 @@ public class SplashScreen extends AppCompatActivity {
         }
         else
         {
-            newUser();
+            Toast.makeText(this, "Internet Not Available", Toast.LENGTH_SHORT).show();
+            Intent networkError = new Intent(SplashScreen.this,NetworkErrorActivity.class);
+            startActivity(networkError);
         }
+
+    }
+    private boolean isNetworkConnected() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
     }
 
     private void newUser() {
