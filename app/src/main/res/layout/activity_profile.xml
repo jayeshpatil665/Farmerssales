@@ -8,10 +8,12 @@
     tools:context=".ProfileActivity">
 
     <ScrollView
+        android:background="#f2f2f2"
         android:layout_width="match_parent"
+        android:scrollbars="none"
         android:layout_height="match_parent"
-        android:layout_above="@+id/profile_bottom"
-        >
+        android:paddingBottom="10dp"
+        android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -23,7 +25,6 @@
                 android:layout_height="260dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/splash_back">
-
             </ImageView>
 
             <Button
@@ -32,10 +33,11 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="165dp"
                 android:layout_marginLeft="20dp"
+                style="?android:borderlessButtonStyle"
                 android:text="Sign In"
                 android:onClick="logInPage"
                 android:textColor="#ffffff"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:textAllCaps="false"
                 android:background="#253746"/>
             <Button
@@ -44,46 +46,80 @@
                 android:layout_height="50dp"
                 android:layout_toRightOf="@id/acc_signin"
                 android:layout_marginTop="165dp"
+                style="?android:borderlessButtonStyle"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="Create Account"
-                android:textColor="#ffffff"
-                android:textSize="18dp"
                 android:onClick="toCreateAcount"
+                android:textColor="#ffffff"
+                android:textSize="16dp"
                 android:textAllCaps="false"
                 android:background="#253746"/>
 
-            <Button
-                android:id="@+id/acc_app_setting"
+            <TextView
+                android:id="@+id/acc_app"
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:gravity="left"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/im_account"
-                android:textAllCaps="false"
+                android:text="\t\tApp Settings"
+                android:textSize="14dp"
                 android:paddingTop="15dp"
-                style="?android:borderlessButtonStyle"
-                android:textSize="12dp"
-                android:layout_marginTop="10dp"
+                android:textStyle="bold"
                 android:background="#ffffff"
-                android:textColor="#374e63"
-                android:drawableRight="@drawable/ic_baseline_chevron_253746_right_24"
-                android:text="\t\tApp Setting\n\n\t\tUpdate notification and location services so\n\t\t you never miss out.">
-            </Button>
-            <Button
+                android:textColor="#253746"/>
+            <TextView
+                android:id="@+id/acc_app1"
+                android:layout_width="340dp"
+                android:layout_height="60dp"
+                android:layout_below="@id/acc_app"
+                android:text="\n\t\tUpdate languages, notification, and location services\n\t\tso you never miss out."
+                android:textSize="12dp"
+                android:background="#ffffff"
+                android:textColor="#374e63">
+            </TextView>
+            <ImageView
+                android:id="@+id/acc_im_right_app"
+                android:layout_alignParentEnd="true"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:paddingBottom="30dp"
+                android:background="#ffffff"
+                android:layout_below="@id/acc_app"
+                android:layout_toRightOf="@id/acc_app1"
+                android:src="@drawable/ic_baseline_chevron_253746_right_24_2"/>
+
+            <TextView
                 android:id="@+id/acc_help"
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:layout_below="@id/acc_app_setting"
-                android:layout_marginTop="10dp"
-                android:gravity="left"
-                style="?android:borderlessButtonStyle"
-                android:textSize="12dp"
-                android:textColor="#374e63"
-                android:textAllCaps="false"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/acc_app1"
+                android:text="\t\tHelp"
+                android:textSize="14dp"
                 android:paddingTop="15dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
                 android:background="#ffffff"
-                android:text="\t\tHelp\n\n\t\tNeed answers? we're here for you."
-                android:drawableRight="@drawable/ic_baseline_chevron_253746_right_24"/>
+                android:textColor="#253746"/>
+            <TextView
+                android:id="@+id/acc_help1"
+                android:layout_width="340dp"
+                android:layout_height="60dp"
+                android:layout_below="@id/acc_help"
+                android:text="\n\t\tNeed answers? we're here for you"
+                android:textSize="12dp"
+                android:background="#ffffff"
+                android:textColor="#374e63">
+            </TextView>
+            <ImageView
+                android:id="@+id/acc_im_right_help"
+                android:layout_alignParentEnd="true"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:paddingBottom="30dp"
+                android:background="#ffffff"
+                android:layout_below="@id/acc_help"
+                android:layout_toRightOf="@id/acc_help1"
+                android:src="@drawable/ic_baseline_chevron_253746_right_24_2"/>
         </RelativeLayout>
 
     </ScrollView>

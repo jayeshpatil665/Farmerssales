@@ -141,23 +141,24 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/otp_signin"
                 android:layout_marginTop="10dp"
-                android:background="#000000"
-                android:text="Send OTP"
+                android:background="#253746"
                 android:onClick="sendOtpNow"
-                android:textColor="#ffffff"
-                android:textSize="20dp"
-                android:textAllCaps="false"/>
-            <Button
-                android:id="@+id/otp_signin"
-                android:layout_below="@+id/otp_createacc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Sign In"
-                android:textSize="20dp"
+                android:text="Send OTP"
                 android:textAllCaps="false"
                 android:textColor="#ffffff"
-                android:background="#000000"/>
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/otp_signin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/otp_createacc"
+                android:layout_marginTop="10dp"
+                android:background="#253746"
+                android:text="Sign In"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="16sp" />
         </RelativeLayout>
 
         <RelativeLayout
