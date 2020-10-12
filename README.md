@@ -1,14 +1,25 @@
 Farmerssales
 <br>
 Android Project ... in Progress <br>
-=Last Modifyed : 24-08-2020  @ 11:51 PM
+=Last Modifyed : 12-10-2020  @ 9:05 PM
 
-= Last Change : Check Inetrnet Connectivity User Sucess Level 0.6
+= Last Change : Data Updation Sucess Level 0.8
 
 <br>
 
-= APK V 0.2 : <br> 
+== APK  : <br> 
+v0.1.1 - LATEST
+https://drive.google.com/drive/folders/1sXz4TDBfTgSlSCPd0Bu1N6r-iCvnhGd2?usp=sharing
+<br>
+v0.1 - old
   https://drive.google.com/file/d/1t20SB0rD65Rb6Y9zUj_Yn-xpFcF0c2XO/view?usp=sharing
 <br>
-= PHP Rest API Files : <br> 
+-------------------------------------
+<br>
+== PHP Rest API Files : <br> 
+v0.1.1
+https://drive.google.com/drive/folders/1_FcKMOXuLKE1JgXAjIP5nsurUmhccCxS?usp=sharing
+
+<br> 
+v0.1 - old
   https://drive.google.com/file/d/1T_gD7O0Ozjj-_gPHY-hlvhOgI_vF8vau/view?usp=sharing
