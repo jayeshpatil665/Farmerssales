@@ -114,7 +114,13 @@ public class SplashScreen extends AppCompatActivity {
                                 Paper.book().write(UserDetails.UserEmailKey,uData1.getEmail());
                                 Paper.book().write(UserDetails.UserPasswordKey,uData1.getPassword());
                                 Paper.book().write(UserDetails.UserfNameKey,uData1.getFirst_name());
-                                Paper.book().write(UserDetails.UserlNameKey,uData1.getFirst_name());
+                                Paper.book().write(UserDetails.UserlNameKey,uData1.getLast_name());
+
+                                Paper.book().write(UserDetails.UserAddressKey,uData1.getAddress());
+                                Paper.book().write(UserDetails.UserStateKey,uData1.getState());
+                                Paper.book().write(UserDetails.UserDistrictKey,uData1.getDistrict());
+                                Paper.book().write(UserDetails.UserPinKey,uData1.getPincode());
+
                             }
 
                         }

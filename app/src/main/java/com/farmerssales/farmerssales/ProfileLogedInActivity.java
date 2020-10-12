@@ -67,4 +67,9 @@ public class ProfileLogedInActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
+    public void toUpdateProfile(View view) {
+        Intent intent = new Intent(ProfileLogedInActivity.this,UpdateUserProfile.class);
+        startActivity(intent);
+    }
 }

@@ -8,10 +8,11 @@
     tools:context=".ProfileLogedInActivity">
 
     <ScrollView
-        android:layout_above="@+id/login_profile_bottom"
+        android:background="#f2f2f2"
         android:layout_width="match_parent"
         android:scrollbars="none"
         android:layout_height="match_parent"
+        android:paddingBottom="10dp"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -19,97 +20,175 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/im_profile_after_signin"
+                android:id="@+id/im_account"
                 android:layout_width="match_parent"
                 android:layout_height="260dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/splash_back">
             </ImageView>
-
-            <Button
-                android:id="@+id/profile_after_signin_inbox"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:gravity="left"
-                android:layout_below="@id/im_profile_after_signin"
-                android:textAllCaps="false"
-                android:paddingTop="15dp"
-                style="?android:borderlessButtonStyle"
-                android:textSize="12dp"
-                android:layout_marginTop="10dp"
-                android:background="#ffffff"
-                android:textColor="#374e63"
-                android:text="\t\tInbox\n\n\t\tSee what's new and get in on our latest promos."
-                android:drawableRight="@drawable/ic_baseline_chevron_253746_right_24"/>
-
-            <Button
-                android:id="@+id/profile_after_signin_profile"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:gravity="left"
-                android:layout_below="@id/profile_after_signin_inbox"
-                android:textAllCaps="false"
-                android:paddingTop="15dp"
-                android:textSize="12dp"
-                style="?android:borderlessButtonStyle"
-                android:layout_marginTop="10dp"
-                android:background="#ffffff"
-                android:textColor="#374e63"
-                android:text="\t\tProfile\n\n\t\tChange your password and personalize your profile."
-                android:drawableRight="@drawable/ic_baseline_chevron_253746_right_24"/>
-
-            <Button
-                android:id="@+id/profile_after_signin_app_setting"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:gravity="left"
-                android:layout_below="@id/profile_after_signin_profile"
-                android:textAllCaps="false"
-                android:paddingTop="15dp"
-                android:textSize="12dp"
-                style="?android:borderlessButtonStyle"
-                android:layout_marginTop="10dp"
-                android:background="#ffffff"
-                android:textColor="#374e63"
-                android:text="\t\tApp Setting\n\n\t\tUpdate notification and location services so you\n\t\tnever miss out."
-                android:drawableRight="@drawable/ic_baseline_chevron_253746_right_24"/>
-            <Button
-                android:id="@+id/profile_after_signin_help"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_below="@id/profile_after_signin_app_setting"
-                android:layout_marginTop="10dp"
-                android:gravity="left"
-                android:textSize="12dp"
-                style="?android:borderlessButtonStyle"
-                android:textColor="#374e63"
-                android:textAllCaps="false"
-                android:paddingTop="15dp"
-                android:background="#ffffff"
-                android:text="\t\tHelp\n\n\t\tNeed answers? we're here for you."
-                android:drawableRight="@drawable/ic_baseline_chevron_253746_right_24"/>
-
-            <Button
-                android:id="@+id/profile_after_signin_signout"
+            <TextView
+                android:id="@+id/acc_profile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sign out"
-                android:textAllCaps="false"
-                android:textSize="18dp"
-                android:onClick="toLogout"
-                android:layout_below="@id/profile_after_signin_help"
+                android:layout_below="@id/im_account"
+                android:text="\t\tMy Profile"
+                android:textSize="14dp"
+                android:paddingTop="15dp"
+                android:textStyle="bold"
+                android:background="#ffffff"
+                android:textColor="#253746"
+                android:onClick="toUpdateProfile"
+                />
+            <TextView
+                android:id="@+id/acc_profile1"
+                android:layout_width="340dp"
+                android:layout_height="60dp"
+                android:layout_below="@id/acc_profile"
+                android:text="\n\t\tChange your password and personalize your profile."
+                android:textSize="12dp"
+                android:background="#ffffff"
+                android:textColor="#374e63"
+                android:onClick="toUpdateProfile">
+            </TextView>
+            <ImageView
+                android:id="@+id/acc_im_right_inbox"
+                android:layout_alignParentEnd="true"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:paddingBottom="30dp"
+                android:background="#ffffff"
+                android:layout_below="@id/acc_profile"
+                android:layout_toRightOf="@id/acc_profile1"
+                android:src="@drawable/ic_baseline_chevron_253746_right_24_2"
+                android:onClick="toUpdateProfile"/>
+            <TextView
+                android:id="@+id/acc_my_ads"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/acc_profile1"
+                android:text="\t\tMy Ads"
+                android:textSize="14dp"
+                android:paddingTop="15dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
+                android:background="#ffffff"
+                android:textColor="#253746"/>
+            <TextView
+                android:id="@+id/acc_my_ads1"
+                android:layout_width="340dp"
+                android:layout_height="60dp"
+                android:layout_below="@id/acc_my_ads"
+                android:text="\n\t\tUpdate your ads and there status."
+                android:textSize="12dp"
+                android:background="#ffffff"
+                android:textColor="#374e63"/>
+            <ImageView
+                android:id="@+id/acc_im_right_my_ads"
+                android:layout_alignParentEnd="true"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:paddingBottom="30dp"
+                android:background="#ffffff"
+                android:layout_below="@id/acc_my_ads"
+                android:layout_toRightOf="@id/acc_my_ads1"
+                android:src="@drawable/ic_baseline_chevron_253746_right_24_2"/>
+            <TextView
+                android:id="@+id/acc_setting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/acc_my_ads1"
+                android:text="\t\tApp Settings"
+                android:textSize="14dp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="15dp"
+                android:textStyle="bold"
+                android:background="#ffffff"
+                android:textColor="#253746"/>
+            <TextView
+                android:id="@+id/acc_setting1"
+                android:layout_width="340dp"
+                android:layout_height="60dp"
+                android:layout_below="@id/acc_setting"
+                android:text="\n\t\tUpdate notification and location services so you never\n\t\tmiss out."
+                android:textSize="12dp"
+                android:background="#ffffff"
+                android:textColor="#374e63"/>
+            <ImageView
+                android:id="@+id/acc_im_right_setting"
+                android:layout_alignParentEnd="true"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:paddingBottom="30dp"
+                android:background="#ffffff"
+                android:layout_below="@id/acc_setting"
+                android:layout_toRightOf="@id/acc_setting1"
+                android:src="@drawable/ic_baseline_chevron_253746_right_24_2"/>
+            <TextView
+                android:id="@+id/acc_help"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/acc_setting1"
+                android:text="\t\tHelp"
+                android:textSize="14dp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="15dp"
+                android:textStyle="bold"
+                android:background="#ffffff"
+                android:textColor="#253746"/>
+            <TextView
+                android:id="@+id/acc_help1"
+                android:layout_width="340dp"
+                android:layout_height="60dp"
+                android:layout_below="@id/acc_help"
+                android:text="\n\t\tNeed answers? we're here for you."
+                android:textSize="12dp"
+                android:background="#ffffff"
+                android:textColor="#374e63"/>
+            <ImageView
+                android:id="@+id/acc_im_right_help"
+                android:layout_alignParentEnd="true"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:paddingBottom="30dp"
+                android:background="#ffffff"
+                android:layout_below="@id/acc_help"
+                android:layout_toRightOf="@id/acc_help1"
+                android:src="@drawable/ic_baseline_chevron_253746_right_24_2"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="45dp"
                 android:layout_marginRight="20dp"
-                android:layout_marginBottom="40dp"
-                android:background="#253746"
-                android:textColor="#ffffff" />
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="50dp"
+                android:layout_below="@id/acc_help1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/profile_after_signin_signout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="false"
+                        android:layout_weight="0.5"
+                        android:text="Sign Out"
+                        android:textSize="16dp"
+                        android:textColor="#ffffff"
+                        android:onClick="toLogout"
+                        android:background="#253746"
+                        android:textAllCaps="false"
+                        style="?android:borderlessButtonStyle" />
+                </LinearLayout>
+            </RelativeLayout>
+
         </RelativeLayout>
+
 
     </ScrollView>
 
     <RelativeLayout
-        android:id="@+id/login_profile_bottom"
+        android:id="@+id/profile_bottom"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true">

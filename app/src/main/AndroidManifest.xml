@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".NetworkErrorActivity"></activity>
+        <activity android:name=".UpdateUserProfile"></activity>
+        <activity android:name=".NetworkErrorActivity" />
         <activity android:name=".ProfileLogedInActivity" />
         <activity android:name=".LoginOptionsActivity" />
         <activity android:name=".HomeActivity" />
