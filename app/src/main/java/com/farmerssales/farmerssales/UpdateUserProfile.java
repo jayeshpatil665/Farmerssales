@@ -52,16 +52,16 @@ public class UpdateUserProfile extends AppCompatActivity {
 
     private void LoadPreviousDataFromDB(String userPhoneKey) {
        // u_pass.setText(Paper.book().read(UserDetails.UserPasswordKey).toString());
-        u_fName.setText(Paper.book().read(UserDetails.UserfNameKey).toString());
-        u_lName.setText(Paper.book().read(UserDetails.UserlNameKey).toString());
-        u_pNumber.setText(Paper.book().read(UserDetails.UserPhoneKey).toString());
-        u_eMail.setText(Paper.book().read(UserDetails.UserEmailKey).toString());
 
-        u_address.setText(Paper.book().read(UserDetails.UserAddressKey).toString());
-        u_state.setText(Paper.book().read(UserDetails.UserStateKey).toString());
-        u_district.setText(Paper.book().read(UserDetails.UserDistrictKey).toString());
-        u_pin.setText(Paper.book().read(UserDetails.UserPinKey).toString());
+        u_fName.setText((String) Paper.book().read(UserDetails.UserfNameKey));
+        u_lName.setText((String) Paper.book().read(UserDetails.UserlNameKey));
+        u_pNumber.setText((String) Paper.book().read(UserDetails.UserPhoneKey));
+        u_eMail.setText((String) Paper.book().read(UserDetails.UserEmailKey));
 
+        u_address.setText((String) Paper.book().read(UserDetails.UserAddressKey));
+        u_state.setText((String) Paper.book().read(UserDetails.UserStateKey));
+        u_district.setText((String) Paper.book().read(UserDetails.UserDistrictKey));
+        u_pin.setText((String) Paper.book().read(UserDetails.UserPinKey));
     }
 
 
