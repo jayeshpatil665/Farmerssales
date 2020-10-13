@@ -2,6 +2,7 @@ package com.farmerssales.farmerssales.UserDetails;
 
 public class UserDetails {
     public static Users onlineUser;
+
     public static final String UserPhoneKey = "UserPhone";
     public static final String UserEmailKey = "UserEmail";
     public static final String UserPasswordKey = "UserPassword";
@@ -15,4 +16,6 @@ public class UserDetails {
 
     public static final String UserSkipKey = "skiped";
     public static final String UserExistKey = "notExist";
+
+    public static final String UserIDKey = "UserId";
 }

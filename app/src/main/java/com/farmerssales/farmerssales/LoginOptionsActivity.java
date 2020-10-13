@@ -198,6 +198,8 @@ private void saveUserDataLocaly(Users uData1) {
 
     Paper.book().write(UserDetails.UserSkipKey,"NotSkiped");
 
+    Log.i("phone",uData1.getPhone_number());
+
     Paper.book().write(UserDetails.UserPhoneKey,uData1.getPhone_number());
     Paper.book().write(UserDetails.UserEmailKey,uData1.getEmail());
     Paper.book().write(UserDetails.UserPasswordKey,uData1.getPassword());
@@ -209,6 +211,7 @@ private void saveUserDataLocaly(Users uData1) {
     Paper.book().write(UserDetails.UserDistrictKey,uData1.getDistrict());
     Paper.book().write(UserDetails.UserPinKey,uData1.getPincode());
 
+    Paper.book().write(UserDetails.UserIDKey,uData1.getId());
 }
 
     private boolean isValidMail(String email) {

@@ -18,6 +18,9 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 import io.paperdb.Paper;
 
+import static com.farmerssales.farmerssales.UserDetails.UserDetails.UserIDKey;
+import static com.farmerssales.farmerssales.UserDetails.UserDetails.UserPhoneKey;
+
 public class SplashScreen extends AppCompatActivity {
 
     @Override
@@ -28,17 +31,11 @@ public class SplashScreen extends AppCompatActivity {
 
         if (isNetworkConnected())
         {
-            String UserPhoneKey = Paper.book().read(UserDetails.UserPhoneKey);
-            if(UserPhoneKey !="")
+            String UsePhoneKey = String.valueOf(Paper.book().read(UserDetails.UserPhoneKey));
+            if(! UsePhoneKey.equals(""))
             {
-                if (!TextUtils.isEmpty(UserPhoneKey))
-                {
-                    this.allowAccess(UserPhoneKey);
-                }
-                else
-                {
-                    newUser();
-                }
+                Log.i("PhoneNO :",UsePhoneKey);
+                this.allowAccess(UsePhoneKey);
             }
             else
             {
@@ -65,8 +62,8 @@ public class SplashScreen extends AppCompatActivity {
         finish();
     }
 
-    private void allowAccess(String userPhoneKey) {
-       this.checkIfUserExist(userPhoneKey);
+    private void allowAccess(String usePhoneKey) {
+       this.checkIfUserExist(usePhoneKey);
 
        Intent intent = new Intent(this,MainActivity.class);
        startActivity(intent);
@@ -85,10 +82,10 @@ public class SplashScreen extends AppCompatActivity {
                 //Starting Write and Read data with URL
                 //Creating array for parameters
                 String[] field = new String[1];
-                field[0] = "phone_number";
+                field[0] = "id";
                 //Creating array for data
                 String[] data = new String[1];
-                data[0] = userPhoneKey;
+                data[0] = String.valueOf(Paper.book().read(UserDetails.UserIDKey));
                 PutData putData = new PutData("http://farmers.atwebpages.com/FarmerssalesAPI/UserDetails/checkUser.php", "POST", field, data);
                 if (putData.startPut()) {
                     if (putData.onComplete()) {
@@ -98,6 +95,7 @@ public class SplashScreen extends AppCompatActivity {
                         if (!result.equals("Error: Database connection"))
                         {
                            //User Exist
+                            Log.i("PutData", result);
                             Users uData1 = gson.fromJson(DecodeString(result),Users.class);
 
                             if (uData1 == null)
@@ -110,6 +108,7 @@ public class SplashScreen extends AppCompatActivity {
                                 Paper.book().write(UserDetails.UserExistKey,"Exist");
                                 Paper.book().write(UserDetails.UserSkipKey,"NotSkiped");
 
+                                Log.i("phone",uData1.getPhone_number());
                                 Paper.book().write(UserDetails.UserPhoneKey,uData1.getPhone_number());
                                 Paper.book().write(UserDetails.UserEmailKey,uData1.getEmail());
                                 Paper.book().write(UserDetails.UserPasswordKey,uData1.getPassword());
@@ -121,6 +120,7 @@ public class SplashScreen extends AppCompatActivity {
                                 Paper.book().write(UserDetails.UserDistrictKey,uData1.getDistrict());
                                 Paper.book().write(UserDetails.UserPinKey,uData1.getPincode());
 
+                                Paper.book().write(UserDetails.UserIDKey,uData1.getId());
                             }
 
                         }

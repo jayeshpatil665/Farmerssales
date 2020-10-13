@@ -18,6 +18,7 @@ import io.paperdb.Paper;
 
 import static com.farmerssales.farmerssales.CreateAccountActivity.isValid;
 import static com.farmerssales.farmerssales.CreateAccountActivity.isValidMob;
+import static com.farmerssales.farmerssales.UserDetails.UserDetails.UserIDKey;
 
 public class UpdateUserProfile extends AppCompatActivity {
 
@@ -41,10 +42,10 @@ public class UpdateUserProfile extends AppCompatActivity {
         u_pass = findViewById(R.id.ed9);
 
         Paper.init(this);
-        String UserPhoneKey = Paper.book().read(UserDetails.UserPhoneKey);
-        if(UserPhoneKey !="")
+        String UseridKey = String.valueOf(Paper.book().read(UserIDKey));
+        if(UseridKey !="")
         {
-            LoadPreviousDataFromDB(UserPhoneKey);
+            LoadPreviousDataFromDB(UseridKey);
         }
         else {//  newUser();
         }
@@ -52,16 +53,17 @@ public class UpdateUserProfile extends AppCompatActivity {
 
     private void LoadPreviousDataFromDB(String userPhoneKey) {
        // u_pass.setText(Paper.book().read(UserDetails.UserPasswordKey).toString());
+       // String.valueOf()
+        u_fName.setText(String.valueOf(Paper.book().read(UserDetails.UserfNameKey)));
+        u_lName.setText(String.valueOf(Paper.book().read(UserDetails.UserlNameKey)));
+        Log.i("phone",UserDetails.UserPhoneKey);
+        u_pNumber.setText(String.valueOf(Paper.book().read(UserDetails.UserPhoneKey)));
+        u_eMail.setText(String.valueOf(Paper.book().read(UserDetails.UserEmailKey)));
 
-        u_fName.setText((String) Paper.book().read(UserDetails.UserfNameKey));
-        u_lName.setText((String) Paper.book().read(UserDetails.UserlNameKey));
-        u_pNumber.setText((String) Paper.book().read(UserDetails.UserPhoneKey));
-        u_eMail.setText((String) Paper.book().read(UserDetails.UserEmailKey));
-
-        u_address.setText((String) Paper.book().read(UserDetails.UserAddressKey));
-        u_state.setText((String) Paper.book().read(UserDetails.UserStateKey));
-        u_district.setText((String) Paper.book().read(UserDetails.UserDistrictKey));
-        u_pin.setText((String) Paper.book().read(UserDetails.UserPinKey));
+        u_address.setText(String.valueOf(Paper.book().read(UserDetails.UserAddressKey)));
+        u_state.setText(String.valueOf(Paper.book().read(UserDetails.UserStateKey)));
+        u_district.setText(String.valueOf(Paper.book().read(UserDetails.UserDistrictKey)));
+        u_pin.setText(String.valueOf(Paper.book().read(UserDetails.UserPinKey)));
     }
 
 
@@ -104,7 +106,7 @@ public class UpdateUserProfile extends AppCompatActivity {
             public void run() {
                 //Starting Write and Read data with URL
                 //Creating array for parameters
-                String[] field = new String[11];
+                String[] field = new String[12];
                 field[0] = "first_name";
                 field[1] = "last_name";
                 field[2] = "phone_number";
@@ -118,8 +120,9 @@ public class UpdateUserProfile extends AppCompatActivity {
 
                 field[9] = "account_activate";
                 field[10] = "login_status";
+                field[11] = "id";
                 //Creating array for data
-                String[] data = new String[11];
+                String[] data = new String[12];
                 data[0] = ufname;
                 data[1] = ulName;
                 data[2] = upNumber;
@@ -133,7 +136,7 @@ public class UpdateUserProfile extends AppCompatActivity {
 
                 data[9] = "0";
                 data[10] = "0";
-
+                data[11] = String.valueOf(Paper.book().read(UserIDKey));
                 PutData putData = new PutData("http://farmers.atwebpages.com/FarmerssalesAPI/UserDetails/updateUserData.php", "POST", field, data);
                 if (putData.startPut()) {
                     if (putData.onComplete()) {

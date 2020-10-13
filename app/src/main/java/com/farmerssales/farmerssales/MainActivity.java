@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         if (UserPhoneKey !="") {
             top_u_name.setText(UserPhoneKey);
         }
-        String UserSkipKey = Paper.book().read(UserDetails.UserSkipKey);
+        String UserSkipKey =String.valueOf(Paper.book().read(UserDetails.UserSkipKey));
         if (UserSkipKey.equals("skiped")) {
             top_u_name.setText("Hello User");
         }
