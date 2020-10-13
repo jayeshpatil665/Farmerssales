@@ -30,7 +30,9 @@
                 android:layout_height="?attr/actionBarSize"
                 android:background="#253746"
                 android:theme="@style/ThemeOverlay.AppCompat.Light"
-                android:id="@+id/myProfile_action_bar">
+                android:id="@+id/myProfile_action_bar"
+                android:onClick="cancleOperation"
+                >
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -381,7 +383,10 @@
                     android:background="#253746"
                     android:textColor="#ffffff"
                     android:layout_toRightOf="@id/save"
-                    android:layout_marginLeft="25dp"/>
+                    android:layout_marginLeft="25dp"
+
+                    android:onClick="cancleOperation"
+                    />
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>

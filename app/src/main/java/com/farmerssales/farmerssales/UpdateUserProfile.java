@@ -44,18 +44,13 @@ public class UpdateUserProfile extends AppCompatActivity {
         String UserPhoneKey = Paper.book().read(UserDetails.UserPhoneKey);
         if(UserPhoneKey !="")
         {
-            if (!TextUtils.isEmpty(UserPhoneKey)) {
-                LoadPreviousDataFromDB(UserPhoneKey);
-            }
-            else {// newUser();
-                }
+            LoadPreviousDataFromDB(UserPhoneKey);
         }
         else {//  newUser();
         }
     }
 
     private void LoadPreviousDataFromDB(String userPhoneKey) {
-        Toast.makeText(this, "Load Data From DB", Toast.LENGTH_SHORT).show();
        // u_pass.setText(Paper.book().read(UserDetails.UserPasswordKey).toString());
         u_fName.setText(Paper.book().read(UserDetails.UserfNameKey).toString());
         u_lName.setText(Paper.book().read(UserDetails.UserlNameKey).toString());
@@ -87,11 +82,9 @@ public class UpdateUserProfile extends AppCompatActivity {
         if (validateFields(ufname,ulName,upNumber,ueMail,uaddress,ustate,udistrict,upin,upass)){
             if (!validFor.equals("")){
                 if (validFor.equals("EmailMob")){
-                    Toast.makeText(this,""+validFor,Toast.LENGTH_SHORT).show();
                     updateDetails(ufname,ulName,upNumber,ueMail,uaddress,ustate,udistrict,upin,upass);
                 }
                 else if (validFor.equals("Mob")){
-                    Toast.makeText(this,""+validFor,Toast.LENGTH_SHORT).show();
                     String emptyEmail = " ";
                     updateDetails(ufname,ulName,upNumber,emptyEmail,uaddress,ustate,udistrict,upin,upass);
                 }
@@ -198,4 +191,7 @@ public class UpdateUserProfile extends AppCompatActivity {
         return false;
     }
 
+    public void cancleOperation(View view) {
+        onBackPressed();
+    }
 }
