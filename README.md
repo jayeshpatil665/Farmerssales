@@ -1,7 +1,7 @@
 Farmerssales
 <br>
 Android Project ... in Progress <br>
-=Last Modifyed : 13-10-2020  @ 7:12 AM
+=Last Modifyed : 13-10-2020  @ 8:03 AM
 
 = Last Change : User Data Updation Sucess Level 0.9
 
